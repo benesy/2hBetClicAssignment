@@ -4,11 +4,12 @@ import { AppComponent } from './app.component';
 import { BackendService } from './backend.service';
 import { ListComponent } from './ticket/list/list.component';
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NewComponent } from './ticket/new/new.component';
 
 @NgModule({
-    declarations: [AppComponent, ListComponent],
-    imports: [BrowserModule, AppRoutingModule, FormsModule],
+    declarations: [AppComponent, ListComponent, NewComponent],
+    imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
     providers: [BackendService],
     bootstrap: [AppComponent]
 })

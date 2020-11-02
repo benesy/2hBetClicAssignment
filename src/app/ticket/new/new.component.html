@@ -1,0 +1,15 @@
+<h3>New ticket</h3>
+<form *ngIf="users; else loading">
+    <label>
+        User :
+        <select [formControl]="user">
+            <option *ngFor="let user of users" [ngValue]="user">{{user.name}}</option>
+        </select>
+    </label>
+    <label>
+        Description : 
+        <input  type="text" pInputText [(formControl)]="ticketDescription">
+    </label>
+    <button (click)="submit()" [disabled]="!validate">Submit</button>
+</form>
+<ng-template #loading>Loading...</ng-template>
