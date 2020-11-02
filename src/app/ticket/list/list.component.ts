@@ -15,7 +15,7 @@ export class ListComponent implements OnInit {
   search: string = "";
   users: User[] = [{id: 0, name: "All"}];
   selectedUser: User;
-  public readonly tickets$: Observable<Ticket[]> = this.backendService.tickets();
+  public tickets$: Observable<Ticket[]> = this.backendService.tickets();
   public ticketsFiltered$: Observable<Ticket[]>;
 
   constructor(private readonly backendService: BackendService) {
