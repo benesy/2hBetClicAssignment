@@ -30,7 +30,7 @@ export class BackendService {
         }
     ];
 
-    public storedUsers: User[] = [{ id: 111, name: 'Victor' }];
+    public storedUsers: User[] = [{ id: 111, name: 'Victor' }, { id: 112, name: 'Jean' }];
 
     private lastId: number = 1;
 

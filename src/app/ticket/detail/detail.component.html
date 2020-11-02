@@ -1,0 +1,25 @@
+<h3>Ticket detail</h3>
+<div *ngIf="ticket && !error">
+    <div *ngIf="updating">Updating ...</div>
+    <ul>
+        <li>
+            <label>Id : </label>{{ticket.id}}
+        </li>
+        <li>
+            <label>User : </label>
+            <select (change)="userChange()" [(ngModel)]="selectedUser">
+                <option *ngFor="let usr of users" [ngValue]="usr" [selected]="user.id === usr.id">{{usr.name}}</option>
+            </select>
+        </li>
+        <li>
+            <label>Completed : </label>{{ticket.completed}}
+            <button *ngIf="!ticket.completed" (click)="completeTicket()" [disabled]="!validate">Complete</button>
+            <button *ngIf="ticket.completed" (click)="completeTicket()" [disabled]="!validate">Uncomplete</button>
+        </li>
+        <li>
+            <label>Description : </label>{{ticket.description}}
+        </li>
+    </ul>
+</div>
+<div *ngIf="!ticket && error">Ticket not found</div>
+<div *ngIf="!ticket && !error">Loading...</div>
