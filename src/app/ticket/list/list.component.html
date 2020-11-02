@@ -1,0 +1,13 @@
+<h3>Ticket List</h3>
+<label>
+    User :
+    <select (change)="update()" [(ngModel)]="selectedUser">
+        <option *ngFor="let user of users" [ngValue]="user">{{user.name}}</option>
+    </select>
+</label>
+<label>Search</label><input [(ngModel)]="search" (input)="update()" />
+<ul>
+    <li *ngFor="let ticket of ticketsFiltered$ | async">
+        <a routerLink="/detail/{{ticket.id}}">Ticket: {{ ticket.id }}, {{ ticket.description }}</a>
+    </li>
+</ul>
